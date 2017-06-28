@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    h1= title
+    p How many tickets do you want?
+    form.count-selector(method="get" action="/tickets")
+        label
+            input(type="radio" value=1 name="ticketCount")
+            | 1张
+        label
+            input(type="radio" value=2 name="ticketCount")
+            | 2张
+        label
+            input(type="radio" value=3 name="ticketCount")
+            | 3张
+        label
+            input(type="radio" value=4 name="ticketCount")
+            | 4张
+        label
+            input(type="radio" value=5 name="ticketCount")
+            | 5张
+
+        input(type="submit" value="提交")
+
+    p The seats assigned to you is following:
+    input(type="text" readonly)
+
+    script(src="/javascripts/index.js")
